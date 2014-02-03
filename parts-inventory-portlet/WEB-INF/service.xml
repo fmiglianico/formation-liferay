@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+
+<service-builder package-path="com.liferay.training.parts">
+	<author>François Miglianico</author>
+	<namespace>Inventory</namespace>
+	<!-- Define the entity for the Inventory_Manufacturer table -->
+	<entity name="Manufacturer" local-service="true" remote-service="true">
+		<!-- Primary key column -->
+		<column name="manufacturerId" type="long" primary="true"></column>
+		<!-- Foreign key columns -->
+		<column name="companyId" type="long"></column>
+		<column name="groupId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<!-- Other columns -->
+		<column name="name" type="String"></column>
+		<column name="emailAddress" type="String"></column>
+		<column name="website" type="String"></column>
+		<column name="phoneNumber" type="String"></column>
+		<!-- Sort order -->
+		<order by="asc">
+			<order-column name="name"></order-column>
+		</order>
+		<!-- Finder Methods -->
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId"></finder-column>
+		</finder>
+	</entity>
+	<!-- Define the entity for the Inventory_Part table -->
+	<entity name="Part" local-service="true" remote-service="true">
+		<!-- Primary key column -->
+		<column name="partId" type="long" primary="true"></column>
+		<!-- Foreign key columns -->
+		<column name="companyId" type="long"></column>
+		<column name="groupId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="manufacturerId" type="long"></column>
+		<!-- Other columns -->
+		<column name="name" type="String" localized="true"></column>
+		<column name="partNumber" type="String"></column>
+		<column name="orderDate" type="Date"></column>
+		<column name="quantity" type="int"></column>
+		<!-- Sort order -->
+		<order by="asc">
+			<order-column name="name"></order-column>
+		</order>
+		<!-- Finder Methods -->
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId"></finder-column>
+		</finder>
+		<finder name="Manufacturer" return-type="Collection">
+			<finder-column name="manufacturerId"></finder-column>
+			<finder-column name="groupId"></finder-column>
+		</finder>
+	</entity>
+</service-builder>

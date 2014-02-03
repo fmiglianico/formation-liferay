@@ -1,0 +1,24 @@
+/* blue.css */
+/* ---------- Base ---------- */
+/* ---------- Wrapper ---------- */
+/* ---------- Banner ---------- */
+/* ---------- Dockbar ---------- */
+/* ---------- Navigation ---------- */
+/* ---------- Content ---------- */
+/* ---------- Portlet ---------- */
+.blue .portlet {
+  background: #214478 url(@theme_image_path@/custom/blue/gradient_bg.png) no-repeat left top;
+  border: 1px solid #333; }
+
+.ie6 .blue .portlet {
+  background: #214478; }
+
+/* ---------- Tabs ---------- */
+/* ---------- Footer ---------- */
+.blue #footer {
+  background: #214478 url(@theme_image_path@/custom/blue/gradient_bg.png) no-repeat left top;
+  border: 1px solid #333; }
+
+.ie6 .blue #footer {
+  background: #214478; }
+

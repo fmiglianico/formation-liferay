@@ -1,0 +1,41 @@
+/* borderless.css */
+
+/* ---------- Base ---------- */
+
+/* ---------- Wrapper ---------- */
+
+/* ---------- Banner ---------- */
+
+/* ---------- Dockbar ---------- */
+
+/* ---------- Navigation ---------- */
+
+/* ---------- Content ---------- */
+
+/* ---------- Portlet ---------- */
+
+.borderless .portlet {
+	background: none;
+	border: 0;
+}
+
+.ie6 .borderless .portlet {
+	background: none;
+}
+
+.borderless .portlet-topper-toolbar {
+	background: #444;
+}
+
+/* ---------- Tabs ---------- */
+
+/* ---------- Footer ---------- */
+
+.borderless #footer {
+	background: none;
+	border: 0;
+}
+
+.ie6 .borderless #footer {
+	background: none;
+}

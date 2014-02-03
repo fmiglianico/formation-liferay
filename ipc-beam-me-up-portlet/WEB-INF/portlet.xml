@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" version="2.0">
+	<portlet>
+		<portlet-name>beam-me-up-portlet</portlet-name>
+		<display-name>Beam Me Up Portlet</display-name>
+		<portlet-class>com.liferay.training.ipc.BeamMeUpPortlet</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/beammeup/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Beam Me Up Portlet</title>
+			<short-title>Beam Me Up Portlet</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+		<supported-processing-event>
+			<qname xmlns:x="http://liferay.com/events">x:ipc.ijustgotbeamed</qname>
+		</supported-processing-event>
+		<supported-publishing-event>
+			<qname xmlns:x="http://liferay.com/events">x:ipc.beammeup</qname>
+		</supported-publishing-event>
+	</portlet>
+	<portlet>
+		<portlet-name>arrival-portlet</portlet-name>
+		<display-name>Arrival Portlet</display-name>
+		<portlet-class>com.liferay.training.ipc.ArrivalPortlet</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/arrival/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Arrival Portlet</title>
+			<short-title>Arrival Portlet</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+		<supported-processing-event>
+			<qname xmlns:x="http://liferay.com/events">x:ipc.beammeup</qname>
+		</supported-processing-event>
+		<supported-publishing-event>
+			<qname xmlns:x="http://liferay.com/events">x:ipc.ijustgotbeamed</qname>
+		</supported-publishing-event>
+	</portlet>
+	<portlet>
+		<portlet-name>tag-listener-portlet</portlet-name>
+		<display-name>Tag Listener Portlet</display-name>
+		<portlet-class>com.liferay.training.ipc.TagListenerPortlet</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/taglistener/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Tag Listener Portlet</title>
+			<short-title>Tag Listener Portlet</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+		<supported-public-render-parameter>tag</supported-public-render-parameter>
+	</portlet>
+	<event-definition>
+		<qname xmlns:x="http://liferay.com/events">x:ipc.beammeup</qname>
+		<value-type>java.lang.String</value-type>
+	</event-definition>
+	<event-definition>
+		<qname xmlns:x="http://liferay.com/events">x:ipc.ijustgotbeamed</qname>
+		<value-type>java.lang.String</value-type>
+	</event-definition>
+	<public-render-parameter>
+		<identifier>tag</identifier>
+		<qname xmlns:x="http://www.liferay.com/public-render-parameters">x:tag</qname>
+	</public-render-parameter>
+</portlet-app>

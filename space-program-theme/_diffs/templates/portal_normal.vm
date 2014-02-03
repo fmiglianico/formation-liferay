@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+#parse ($init)
+
+<html class="#language("lang.dir")" dir="#language("lang.dir")" lang="$w3c_language_id">
+
+<head>
+	<title>$the_title - $company_name</title>
+
+	$theme.include($top_head_include)
+</head>
+
+#if($use_custom_background == false)
+<body class="$css_class $preset_background">
+#else
+<body class="$css_class" style="#if($background_color) background-color: $background_color; #end #if($background_url) background-image: url($background_url); background-repeat: no-repeat; background-position: 50% top; #end">
+#end
+
+$theme.include($body_top_include)
+
+<a href="#main-content" id="skip-to-content"> <span class="aui-helper-hidden-accessible">#language("skip-to-content")</span> </a>
+
+#if ($is_signed_in)
+	#dockbar()
+#end
+
+<div id="wrapper">
+
+			#if (!$is_signed_in)
+			<a href="$sign_in_url" id="sign-in" rel="nofollow">$sign_in_text</a>
+		#end
+	
+	<header id="banner" role="banner">
+		<div id="heading">
+			<h1 class="site-title">
+				<a class="$logo_css_class" href="$site_default_url" title="#language("go-to") $site_name">
+					<img alt="$logo_description" class="png" height="$site_logo_height" src="$site_logo" width="$site_logo_width" />
+				</a>
+
+				#if ($show_site_name)
+					<span class="site-name" title="#language("go-to") $site_name">
+						$site_name
+					</span>
+				#end
+			</h1>
+
+		</div>
+
+
+		#if ($has_navigation || $is_signed_in)
+			#parse ("$full_templates_path/navigation.vm")
+		#end
+	</header>
+
+		<div class="clear"></div>
+
+	<div id="content">
+		
+
+		#if ($selectable)
+			$theme.include($content_include)
+		#else
+			$portletDisplay.recycle()
+
+			$portletDisplay.setTitle($the_title)
+
+			$theme.wrapPortlet("portlet.vm", $content_include)
+		#end
+	</div>
+
+	<footer id="footer" role="contentinfo">
+				<div class="powered-by footer-inset">
+			#language("powered-by") <a href="http://www.liferay.com" rel="external">Liferay</a>
+		</div>
+
+		#if($footer_copy != "")
+			<div class="footer-inset">
+				$footer_copy
+			</div>
+		#end
+
+		#if($show_fb_logo == true || $show_twitter_logo == true || $show_linkedin_logo == true)
+			<div class="footer-inset">
+				#if($show_fb_logo == true)
+					<a class="icon" href="http://www.facebook.com" target="_blank"></a>
+				#end
+				#if ($show_twitter_logo == true)
+					<a class="icon twitter" href="http://www.twitter.com" target="_blank"></a>
+				#end
+				#if ($show_linkedin_logo == true)
+					<a class="icon linkedin" href="http://www.linkedin.com" target="_blank"></a>
+				#end
+			</div>
+		#end
+		
+	<div class="clear"></div>
+	</footer>
+</div>
+
+$theme.include($body_bottom_include)
+
+</body>
+
+$theme.include($bottom_include)
+
+</html>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_Inventory_ManufacturerService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="com.liferay.training.parts.service.http.ManufacturerServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="ManufacturerServiceSoap" />
+		<parameter name="wsdlServiceElement" value="ManufacturerServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_Inventory_ManufacturerService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.parts.training.liferay.com" />
+	</service>
+</deployment>

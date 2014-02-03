@@ -1,0 +1,11 @@
+#* This file allows you to override and define new Velocity variables. *#
+
+#set($preset_background = $theme_display.getThemeSetting('preset-background'))
+#set($use_custom_background = $theme_display.getThemeSetting('use-custom-background'))
+#set($background_color = $theme_display.getThemeSetting('background-color'))
+#set($background_url = $theme_display.getThemeSetting('background-url'))
+
+#set($show_fb_logo = $theme_display.getThemeSetting('show-fb-logo'))
+#set($show_twitter_logo = $theme_display.getThemeSetting('show-twitter-logo'))
+#set($show_linkedin_logo = $theme_display.getThemeSetting('show-linkedin-logo'))
+#set($footer_copy = $theme_display.getThemeSetting('footer-copy'))

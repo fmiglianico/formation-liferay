@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<ext-info>
+	<servlet-context-name>training-ext</servlet-context-name>
+	<files>
+		<file>ext-impl/classes/com/liferay/portal/deploy/dependencies/ext-training-ext-util-bridges.jar</file>
+		<file>ext-impl/classes/com/liferay/portal/deploy/dependencies/ext-training-ext-util-java.jar</file>
+		<file>ext-impl/classes/com/liferay/portal/deploy/dependencies/ext-training-ext-util-taglib.jar</file>
+		<file>ext-web/docroot/META-INF/MANIFEST.MF</file>
+		<file>ext-web/docroot/WEB-INF/portlet-ext.xml</file>
+	</files>
+</ext-info>

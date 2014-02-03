@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE look-and-feel PUBLIC "-//Liferay//DTD Look and Feel 6.1.0//EN" "http://www.liferay.com/dtd/liferay-look-and-feel_6_1_0.dtd">
+
+<look-and-feel>
+	<compatibility>
+		<version>6.1.20+</version>
+	</compatibility>
+	<theme id="space-program" name="Space Program Theme">
+		<settings>
+			<setting configurable="true" key="preset-background" options="stars,white" type="select" value="stars"></setting>
+			<setting configurable="true" key="use-custom-background" type="checkbox" value="false"></setting>
+			<setting configurable="true" key="background-color" type="text" value=""></setting>
+			<setting configurable="true" key="background-url" type="text" value=""></setting>
+			<setting configurable="true" key="footer-copy" type="text" value=""></setting>
+			<setting configurable="true" key="show-fb-logo" type="checkbox" value=""></setting>
+			<setting configurable="true" key="show-twitter-logo" type="checkbox" value=""></setting>
+			<setting configurable="true" key="show-linkedin-logo" type="checkbox" value=""></setting>
+		</settings>
+		<color-scheme id="01" name="Default">
+			<css-class>default</css-class>
+			<color-scheme-images-path>/images</color-scheme-images-path>
+		</color-scheme>
+		<color-scheme id="02" name="Borderless">
+			<css-class>borderless</css-class>
+			<color-scheme-images-path>/images/custom/borderless</color-scheme-images-path>
+		</color-scheme>
+		<color-scheme id="03" name="Blue">
+			<css-class>blue</css-class>
+			<color-scheme-images-path>/images/custom/blue</color-scheme-images-path>
+		</color-scheme>
+	</theme>
+</look-and-feel>

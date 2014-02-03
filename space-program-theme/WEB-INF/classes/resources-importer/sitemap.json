@@ -1,0 +1,77 @@
+{ "layoutTemplateId": "1_2_columns_i",
+	"layouts": [
+		{
+			"title": "Welcome",
+			"name": "Welcome",
+			"friendlyURL": "/welcome",
+			"layoutTemplateId": "1_2_columns_i",
+			"columns": [
+				[
+					"Welcome Banner.html"
+				],
+				[
+					{
+						"portletId": "101",
+						"portletPreferences": {
+							"anyAssetType": "false",
+							"classNameIds": "10009"
+						}
+					}
+				],
+				[
+					"Sending Stuff Into Space.html"
+				],
+				[
+					"Resize Browser.html"
+				]
+			]
+		},
+		{
+			"title": "Blog",
+			"name": "Blog",
+			"layoutTemplateId": "2_columns_ii",
+			"columns": [
+				[
+					{
+						"portletId": "114"
+					},
+					{
+						"portletId": "148"
+					}
+				],
+				[
+					{
+						"portletId": "161"
+					}
+				]
+
+			]
+		},
+		{
+			"title": "Message Board",
+			"name": "Message Board",
+			"layoutTemplateId": "1_column",
+			"columns": [
+				[
+					{
+						"portletId": "19"
+					}
+				]
+			]
+		},
+		{
+			"title": "Wiki",
+			"name": "Wiki",
+			"layoutTemplateId": "1_column",
+			"columns": [
+				[
+					{
+						"portletId": "36"
+					}
+				]
+			]
+		}
+
+	]
+
+}
