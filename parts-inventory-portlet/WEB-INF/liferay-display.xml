@@ -4,8 +4,6 @@
 <display>
 	<category name="category.training">
 		<portlet id="parts-portlet"></portlet>
-	</category>
-	<category name="category.hidden">
 		<portlet id="manufacturer-portlet"></portlet>
 	</category>
 </display>

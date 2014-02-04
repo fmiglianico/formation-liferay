@@ -55,6 +55,34 @@ public class ManufacturerServiceWrapper implements ManufacturerService,
 		return _manufacturerService.invokeMethod(name, parameterTypes, arguments);
 	}
 
+	public void addManufacturer(long companyId, long groupId, long userId,
+		java.lang.String name, java.lang.String emailAddress,
+		java.lang.String phoneNumber, java.lang.String website)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		_manufacturerService.addManufacturer(companyId, groupId, userId, name,
+			emailAddress, phoneNumber, website);
+	}
+
+	public void deleteManufacturer(long manufacturerId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		_manufacturerService.deleteManufacturer(manufacturerId);
+	}
+
+	public com.liferay.training.parts.model.Manufacturer getManufacturer(
+		long manufacturerId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _manufacturerService.getManufacturer(manufacturerId);
+	}
+
+	public java.util.List<com.liferay.training.parts.model.Manufacturer> getManufacturersByGroupId(
+		long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _manufacturerService.getManufacturersByGroupId(groupId);
+	}
+
 	/**
 	 * @deprecated Renamed to {@link #getWrappedService}
 	 */

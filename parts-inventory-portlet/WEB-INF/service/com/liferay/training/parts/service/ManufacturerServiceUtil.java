@@ -62,6 +62,35 @@ public class ManufacturerServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
+	public static void addManufacturer(long companyId, long groupId,
+		long userId, java.lang.String name, java.lang.String emailAddress,
+		java.lang.String phoneNumber, java.lang.String website)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		getService()
+			.addManufacturer(companyId, groupId, userId, name, emailAddress,
+			phoneNumber, website);
+	}
+
+	public static void deleteManufacturer(long manufacturerId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		getService().deleteManufacturer(manufacturerId);
+	}
+
+	public static com.liferay.training.parts.model.Manufacturer getManufacturer(
+		long manufacturerId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService().getManufacturer(manufacturerId);
+	}
+
+	public static java.util.List<com.liferay.training.parts.model.Manufacturer> getManufacturersByGroupId(
+		long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getManufacturersByGroupId(groupId);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

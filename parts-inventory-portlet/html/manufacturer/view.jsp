@@ -19,7 +19,7 @@
 	String redirect = PortalUtil.getCurrentURL(renderRequest);
 %>
 
-<aui:button-row>
+<aui:button-row cssClass="manufacturer-buttons">
 	<c:if test='<%=hasAddPermission%>'>
 		<portlet:renderURL var="addManufacturerURL">
 			<portlet:param name="mvcPath"
@@ -27,8 +27,24 @@
 			<portlet:param name="redirect" value="<%=redirect%>" />
 		</portlet:renderURL>
 
-		<aui:button value="add-manufacturer"
-			onClick="<%=addManufacturerURL.toString()%>" />
+		<aui:script use="aui-button-item">
+			var buttonRow = A.one(".manufacturer-buttons");
+			
+			var buttonLabel = "<liferay-ui:message key="add-manufacturer" />";
+			
+			var button = new A.ButtonItem({
+				icon: 'plusthick',
+				label: buttonLabel,
+				handler: function(event) {
+					location.href = "<%=addManufacturerURL.toString() %>";
+				}
+			}).render(buttonRow);
+			
+			A.getDoc().on('key', function() {
+					button.fire('click');
+				}, 'down:77+alt+shift');
+		</aui:script>
+		
 	</c:if>
 	<c:if test='<%= hasConfigurePermission %>'>
 		<liferay-security:permissionsURL
@@ -37,7 +53,19 @@
 			resourcePrimKey="<%= String.valueOf(scopeGroupId) %>"
 			var="permissionsURL" />
 
-		<aui:button value="permissions" onClick="<%= permissionsURL %>" />
+		<aui:script use="aui-button-item">
+			var buttonRow = A.one(".manufacturer-buttons");
+			
+			var buttonLabel = "<liferay-ui:message key="Permissions" />";
+			
+			var button = new A.ButtonItem({
+				icon: 'gear',
+				label: buttonLabel,
+				handler: function(event) {
+					location.href = "<%=permissionsURL%>";
+				}
+			}).render(buttonRow);
+		</aui:script>
 	</c:if>
 
 	    

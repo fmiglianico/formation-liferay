@@ -14,6 +14,13 @@
 
 package com.liferay.training.parts.service.http;
 
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
+
+import com.liferay.training.parts.service.ManufacturerServiceUtil;
+
+import java.rmi.RemoteException;
+
 /**
  * <p>
  * This class provides a SOAP utility for the
@@ -58,4 +65,61 @@ package com.liferay.training.parts.service.http;
  * @generated
  */
 public class ManufacturerServiceSoap {
+	public static void addManufacturer(long companyId, long groupId,
+		long userId, java.lang.String name, java.lang.String emailAddress,
+		java.lang.String phoneNumber, java.lang.String website)
+		throws RemoteException {
+		try {
+			ManufacturerServiceUtil.addManufacturer(companyId, groupId, userId,
+				name, emailAddress, phoneNumber, website);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static void deleteManufacturer(long manufacturerId)
+		throws RemoteException {
+		try {
+			ManufacturerServiceUtil.deleteManufacturer(manufacturerId);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.liferay.training.parts.model.ManufacturerSoap getManufacturer(
+		long manufacturerId) throws RemoteException {
+		try {
+			com.liferay.training.parts.model.Manufacturer returnValue = ManufacturerServiceUtil.getManufacturer(manufacturerId);
+
+			return com.liferay.training.parts.model.ManufacturerSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.liferay.training.parts.model.ManufacturerSoap[] getManufacturersByGroupId(
+		long groupId) throws RemoteException {
+		try {
+			java.util.List<com.liferay.training.parts.model.Manufacturer> returnValue =
+				ManufacturerServiceUtil.getManufacturersByGroupId(groupId);
+
+			return com.liferay.training.parts.model.ManufacturerSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	private static Log _log = LogFactoryUtil.getLog(ManufacturerServiceSoap.class);
 }

@@ -2,8 +2,29 @@
 
 <deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
 	<service name="Plugin_Inventory_ManufacturerService" provider="java:RPC" style="rpc" use="encoded">
-		<parameter name="allowedMethods" value="*" />
+		<arrayMapping xmlns:ns="urn:http.service.parts.training.liferay.com" xmlns:cmp-ns="http://model.parts.training.liferay.com" qname="ns:ArrayOf_tns2_ManufacturerSoap" type="java:com.liferay.training.parts.model.ManufacturerSoap[]" innerType="cmp-ns:ManufacturerSoap" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></arrayMapping>
+		<typeMapping xmlns:ns="http://model.parts.training.liferay.com" qname="ns:ManufacturerSoap" type="java:com.liferay.training.parts.model.ManufacturerSoap" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<operation xmlns:operNS="urn:http.service.parts.training.liferay.com" name="addManufacturer" qname="operNS:addManufacturer" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="companyId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="userId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="name" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="emailAddress" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="phoneNumber" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="website" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.parts.training.liferay.com" name="deleteManufacturer" qname="operNS:deleteManufacturer" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="manufacturerId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.parts.training.liferay.com" xmlns:rtns="http://model.parts.training.liferay.com" name="getManufacturer" qname="operNS:getManufacturer" returnQName="getManufacturerReturn" returnType="rtns:ManufacturerSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="manufacturerId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.parts.training.liferay.com" xmlns:rtns="urn:http.service.parts.training.liferay.com" xmlns:tns2="http://model.parts.training.liferay.com" name="getManufacturersByGroupId" qname="operNS:getManufacturersByGroupId" returnQName="getManufacturersByGroupIdReturn" returnType="rtns:ArrayOf_tns2_ManufacturerSoap" returnItemType="tns2:ManufacturerSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="addManufacturer deleteManufacturer getManufacturer getManufacturersByGroupId" />
 		<parameter name="className" value="com.liferay.training.parts.service.http.ManufacturerServiceSoap" />
+		<parameter name="schemaUnqualified" value="http://model.parts.training.liferay.com,urn:http.service.parts.training.liferay.com" />
 		<parameter name="typeMappingVersion" value="1.2" />
 		<parameter name="wsdlPortType" value="ManufacturerServiceSoap" />
 		<parameter name="wsdlServiceElement" value="ManufacturerServiceSoapService" />

@@ -14,26 +14,69 @@
 
 package com.liferay.training.parts.service.impl;
 
+import com.liferay.portal.kernel.exception.PortalException;
+import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.training.parts.model.Manufacturer;
+import com.liferay.training.parts.model.impl.ManufacturerImpl;
 import com.liferay.training.parts.service.base.ManufacturerServiceBaseImpl;
+
+import java.util.List;
 
 /**
  * The implementation of the manufacturer remote service.
- *
+ * 
  * <p>
- * All custom service methods should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the {@link com.liferay.training.parts.service.ManufacturerService} interface.
- *
+ * All custom service methods should be put in this class. Whenever methods are
+ * added, rerun ServiceBuilder to copy their definitions into the
+ * {@link com.liferay.training.parts.service.ManufacturerService} interface.
+ * 
  * <p>
- * This is a remote service. Methods of this service are expected to have security checks based on the propagated JAAS credentials because this service can be accessed remotely.
+ * This is a remote service. Methods of this service are expected to have
+ * security checks based on the propagated JAAS credentials because this service
+ * can be accessed remotely.
  * </p>
- *
+ * 
  * @author François Miglianico
  * @see com.liferay.training.parts.service.base.ManufacturerServiceBaseImpl
  * @see com.liferay.training.parts.service.ManufacturerServiceUtil
  */
 public class ManufacturerServiceImpl extends ManufacturerServiceBaseImpl {
-	/*
-	 * NOTE FOR DEVELOPERS:
-	 *
-	 * Never reference this interface directly. Always use {@link com.liferay.training.parts.service.ManufacturerServiceUtil} to access the manufacturer remote service.
-	 */
+
+	public void addManufacturer(long companyId, long groupId, long userId,
+			String name, String emailAddress, String phoneNumber, String website)
+			throws SystemException, PortalException {
+		
+		Manufacturer manufacturer = new ManufacturerImpl();
+		manufacturer.setCompanyId(companyId);
+		manufacturer.setGroupId(groupId);
+		manufacturer.setUserId(userId);
+		manufacturer.setName(name);
+		manufacturer.setEmailAddress(emailAddress);
+		manufacturer.setPhoneNumber(phoneNumber);
+		manufacturer.setWebsite(website);
+		
+		manufacturerLocalService.addManufacturer(manufacturer, userId);
+	}
+	
+	public void deleteManufacturer(long manufacturerId)
+			throws SystemException, PortalException {
+		
+		manufacturerLocalService.deleteManufacturer(manufacturerId);
+		
+	}
+	
+	public Manufacturer getManufacturer(long manufacturerId)
+			throws SystemException, PortalException {
+		
+		return manufacturerLocalService.getManufacturer(manufacturerId);
+		
+	}
+	
+	public List<Manufacturer> getManufacturersByGroupId(long groupId)
+			throws SystemException {
+		
+		return manufacturerLocalService.getManufacturersByGroupId(groupId);
+		
+	}
+
 }

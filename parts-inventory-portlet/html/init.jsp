@@ -11,6 +11,7 @@
 <%@ page import="java.text.SimpleDateFormat" %>
 
 <%@ page import="com.liferay.portal.kernel.dao.search.ResultRow" %>
+<%@ page import="com.liferay.portal.kernel.portlet.LiferayWindowState" %>
 <%@ page import="com.liferay.portal.kernel.util.GetterUtil" %>
 <%@ page import="com.liferay.portal.kernel.util.HtmlUtil" %>
 <%@ page import="com.liferay.portal.kernel.util.ParamUtil" %>
@@ -23,6 +24,8 @@
 <%@ page import="com.liferay.training.parts.model.Manufacturer"%>
 <%@ page import="com.liferay.training.parts.service.PartLocalServiceUtil"%>
 <%@ page import="com.liferay.training.parts.service.ManufacturerLocalServiceUtil"%>
+
+
 
 <liferay-theme:defineObjects />
 
